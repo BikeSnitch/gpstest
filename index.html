@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <br>0</br>
-  -177.84314266406
+  <body> 
+    <div id="swiss"><a href="javascript:cputemp2()">Click to display CPU Temp</a></div>
+    <script>
+      function cputemp2()
+      {
+        $.ajax(
+        {
+          type: "POST",
+          url: "cgi-bin/cputemp.py",
+          dataType: "html",
+          success: function(msg)
+          {
+            document.getElementById('swiss').innerHTML = msg;
+          },
+        });
+      }
+    </script>
+  </body>
+  
 </html>
